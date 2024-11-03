@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+dist/
+.build/
+
+# Build outputs
+public/
+dist/spa
+dist/ssr
+dist/pwa
+dist/electron
+dist/bex
+
+# Quasar config and cache
+.quasar/
+.eslintcache
+.sass-cache/
+cache/
+pids/
+logs/
+
+# OS and IDE specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+node_modules/
+
+# Environment and secrets
+.env
+.env.*    # Ignore specific environment files (like .env.production or .env.development)
