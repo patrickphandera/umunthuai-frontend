@@ -1,6 +1,5 @@
-// const API_BASE_URL ='http://127.0.0.1:5000'
-// const API_BASE_URL = "https://umunthuai-backend.onrender.com";
-// const API_BASE_URL = "http://127.0.0.1:5000";
+
+let API_BASE_URL = "https://umunthuai-backend.onrender.com";
 import axios from "axios";
 let token = localStorage.getItem("token");
 

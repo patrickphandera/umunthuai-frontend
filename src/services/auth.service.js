@@ -4,7 +4,7 @@ import axios from "axios";
 let token = localStorage.getItem("token");
 // const API_BASE_URL = "http://127.0.0.1:5000";
 // Access the base URL from environment variables
-const API_BASE_URL = "https://umunthuai-backend.onrender.com";
+let API_BASE_URL = "https://umunthuai-backend.onrender.com";
 // const API_BASE_URL = "https://umunthuai-backend.onrender.com";
 // Function to handle user registration
 export async function postData(data, endpoint) {
