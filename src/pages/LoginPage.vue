@@ -22,7 +22,12 @@
             required
             class="q-mb-md"
           />
-          <q-btn label="Lowani" type="submit" color="primary" class="full-width q-mb-md" />
+          <q-btn
+            label="Lowani"
+            type="submit"
+            color="primary"
+            class="full-width q-mb-md"
+          />
         </q-form>
       </q-card-section>
 
@@ -40,21 +45,21 @@
 </template>
 
 <script>
-import { loginUser } from '../services/auth.service';
+import { loginUser } from "../services/auth.service";
 
 export default {
   data() {
     return {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       error: false,
-      errormsg: '',
+      errormsg: "",
     };
   },
   methods: {
     goToRegister() {
       // Redirect to the registration page
-      this.$router.push('/auth/register');
+      this.$router.push("/auth/register");
     },
     async login() {
       try {
@@ -63,27 +68,27 @@ export default {
           phone: this.username,
           password: this.password,
         };
-        
+
         // Call the login service with the user credentials
         const response = await loginUser(loginData);
-        
+
         // Check the response and redirect based on role
-        if (response.role === 'user') {
-          this.$router.push('/admin');
+        if (response.role === "user") {
+          this.$router.push("/admin");
         } else if (response) {
-          this.$router.push('/chat');
+          this.$router.push("/chat");
           // this.error = true;
           // this.errormsg = 'Your account is being reviewed, you will be notified once the process is completed';
-        }
-        else{
-          this.errormsg = 'Your account fails to login';
+        } else {
+          this.errormsg = "Your account fails to login";
         }
       } catch (error) {
         // Handle login errors
         this.error = true;
-        console.log(error)
-        this.errormsg = error.response.data.error || 'Login failed. Please try again.';
-        console.error('Login failed:', this.errormsg);
+        console.log(error);
+        this.errormsg =
+          error.response.error || "Login failed. Please try again.";
+        console.error("Login failed:", this.errormsg);
       }
     },
   },

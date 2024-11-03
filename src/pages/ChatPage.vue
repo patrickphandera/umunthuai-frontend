@@ -26,7 +26,7 @@
       > <template v-slot:append>
         <div class='q-ma-md'>
 
-          <q-btn unelevated color="primary" class='q-mt-md' icon="navigation" @click="sendMessage" />
+          <q-btn unelevated color="primary" class='q-mt-md' icon="navigation" @click="sendMessage" :loading='loading' />
         </div>
         </template></q-input>
 
@@ -40,6 +40,7 @@ import { getAllData } from '../services/rest.services';
 export default {
   data() {
     return {
+      loading: false,
       msgSent: false, // User input
       userMessage: "", // User input
       messages: [
@@ -49,7 +50,7 @@ export default {
   },
   methods: {
     async sendMessage() {
-
+this.loading=true
       if (this.userMessage.trim()) {
         // Add the user message to the chat
        await this.messages.push({ sender: "user", text: this.userMessage.trim() });
@@ -60,7 +61,7 @@ export default {
        this.msgSent=false
        
        this.botResponse(result.response)
-      
+       this.loading=false
         // this.botResponse(this.userMessage.trim());
 
         // Clear the input field
