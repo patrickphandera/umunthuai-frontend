@@ -3,7 +3,7 @@
 import axios from 'axios';
 let token=localStorage.getItem('token');
 // Access the base URL from environment variables
-const API_BASE_URL = 'http://127.0.0.1:5000';
+const API_BASE_URL = 'https://umunthuai-backend.onrender.com';
 // const API_BASE_URL="http://127.0.0.1:5000"
 // Function to handle user registration
 export async function postData(data,endpoint) {
@@ -41,14 +41,14 @@ export async function loginUser(credentials) {
   try {
     // Make a POST request to the login endpoint
     const response = await axios.post(`${API_BASE_URL}/login`, credentials);
-    
+
     // Check if the response contains a token
     if (response.data.access_token) {
       // Save the token to local storage
       localStorage.setItem('token', response.data.access_token);
       localStorage.setItem('user', response.data.user_id);
       localStorage.setItem('role', response.data.role);
-      
+
     }
     console.log(response)
     // Return the response data (e.g., user info, success message)
