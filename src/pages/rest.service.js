@@ -16,7 +16,7 @@ export async function postData(data,endpoint) {
            "Content-Type": "multipart/form-data"
         }
       });
-  
+
       // Return the response data
       return response.data;
     } catch (error) {
@@ -32,10 +32,10 @@ export async function postData(data,endpoint) {
         headers: {
           'Authorization': `${token}`, // Add other headers as needed
            "Content-Type": "multipart/form-data"
-           
+
         }
       });
-  
+
       // Return the response data
       return response.data;
     } catch (error) {
@@ -53,7 +53,7 @@ export async function postData(data,endpoint) {
           'Authorization': `${token}`, // Add other headers as needed
         }
       });
-  
+
       // Return the response data
       return response.data;
     } catch (error) {
@@ -70,7 +70,7 @@ export async function postData(data,endpoint) {
           'Authorization': `${token}`, // Add other headers as needed
         }
       });
-  
+
       // Return the response data
       // console.log(response.data)
       return response.data;
@@ -89,8 +89,8 @@ export async function postData(data,endpoint) {
       const result= await axios.get(`${API_BASE_URL}/download/v2/${endpoint}`, {
       });
       // Return a success message or data if needed
-      return result.data; 
-  
+      return result.data;
+
     } catch (error) {
       // Handle errors
       console.error('Request error:', error);
@@ -114,4 +114,3 @@ export async function postData(data,endpoint) {
       throw error;
     }
   }
- 
